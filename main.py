@@ -73,6 +73,16 @@ def chrCheck(text):
 
 
 #
+# VARIABLES
+
+plainText = "word"
+answer = "word"
+numbRows = 999
+
+plainTextTable = []
+
+
+#
 # IPO
 
 sleep(2)
@@ -122,7 +132,7 @@ while True:
             print()
             spclPrint("ERROR: Invalid input type.", "red")
             sleep(0.1)
-            spclPrint("Only accepts digits and alpha characters", "red")
+            spclPrint("Argument only accepts digits and alpha characters.", "red")
             print()
             print()
             sleep(3)
@@ -130,4 +140,26 @@ while True:
         else:
             plainText = plainText.lower()
             plainText = plainText.replace(" ", "")
+            print()
+            print()
             break
+    
+    if plainText == "":
+        break
+
+    while True:
+        spclPrint("Enter the number of rows used for encryption:")
+        numbRows = input()
+
+        if numbRows.isdigit():
+            break
+        else:
+            sleep(1)
+            print()
+            print()
+            spclPrint("ERROR: Invalid input type.", "red")
+            sleep(0.1)
+            spclPrint("Argument only accepts digits.", "red")
+            print()
+            print()
+            sleep(3)
