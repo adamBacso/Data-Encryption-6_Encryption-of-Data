@@ -85,4 +85,5 @@ while True:
                     print()
                     spclPrint("ERROR: Invalid input.", "red")
                     sleep(0.1)
-                    spclPrint("Input not ")
+                    spclPrint("Input not recognised.", "red")
+                    
