@@ -51,6 +51,26 @@ def spclPrint(text, color = 'white'):
     
     print()
 
+def chrCheck(text):
+
+    global textStatus
+
+    for char in text:
+        if char.isalpha():
+            textStatus = "go"
+        elif char.isdigit():
+            textStatus = "go"
+        elif char == " ":
+            textStatus = "go"
+        else:
+            textStatus = "no-go"
+            break
+    
+    if textStatus == "no-go":
+        return True
+    elif textStatus == "go":
+        return False
+
 
 #
 # IPO
@@ -81,9 +101,33 @@ while True:
                 if answer in ['YES', 'NO']:
                     break
                 else:
+                    sleep(1)
                     print()
                     print()
                     spclPrint("ERROR: Invalid input.", "red")
                     sleep(0.1)
                     spclPrint("Input not recognised.", "red")
-                    
+                    print()
+                    print()
+                    sleep(3)
+                
+            if answer == "YES":
+                break
+            else:
+                pass
+        
+        elif chrCheck(plainText):
+            sleep(1)
+            print()
+            print()
+            spclPrint("ERROR: Invalid input type.", "red")
+            sleep(0.1)
+            spclPrint("Only accepts digits and alpha characters", "red")
+            print()
+            print()
+            sleep(3)
+
+        else:
+            plainText = plainText.lower()
+            plainText = plainText.replace(" ", "")
+            break
